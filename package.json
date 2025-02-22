@@ -1,0 +1,28 @@
+{
+      "name": "neofin",
+      "version": "1.0.0",
+      "description": "Neofin - Unified Financial Platform",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/neofin/neofin.git"
+      },
+      "license": "MIT",
+      "workspaces": [
+        "client",
+        "server",
+        "machine-learning",
+        "blockchain"
+      ],
+      "scripts": {
+        "client-install": "npm install --prefix client",
+        "server-install": "npm install --prefix server",
+        "ml-install": "npm install --prefix machine-learning",
+        "blockchain-install": "npm install --prefix blockchain",
+        "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+        "build": "npm run build --prefix client",
+        "start": "npm start --prefix server"
+      },
+      "devDependencies": {
+        "concurrently": "^6.2.0"
+      }
+    }
